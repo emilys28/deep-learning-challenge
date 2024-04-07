@@ -1,25 +1,32 @@
 # deep-learning-challenge
+Module 21
 
 # Author 
 Emily L Sims
 
 # Report on the Neural Network Model
 ## Overview of the analysis: 
+The purpose of my deep learning model was to create a binary classification model to help predict if an Alphabet Soup-funded organization will be successful based on the features in the dataset. My goal was to predict a binary outcome based on the input features provided in the dataset. The analysis involves preprocessing the data, defining a neural network model, compiling, training, and evaluating the model to achieve the desired performance.
 
 ## Results:
 - Data Preprocessing
-  - What variable(s) are the target(s) for your model?
-  - What variable(s) are the features for your model?
-  - What variable(s) should be removed from the input data because they are neither targets nor features?
-  - 
+  - What variable(s) are the target(s) for your model? The target variable for the model is typically indicated by the column named IS_SUCCESSFUL, which represented whether an organization was successful (1) or not (0).
+  - What variable(s) are the features for your model? The features for the model are all the other columns in the dataset, including APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL_CONSIDERATIONS, and ASK_AMT.
+  - What variable(s) should be removed from the input data because they are neither targets nor features? Variables such as EIN and NAME are identifiers and should be removed from the input data as they are neither targets nor features.
+    
 - Compiling, Training, and Evaluating the Model
-  - How many neurons, layers, and activation functions did you select for your neural network model, and why?
-  - Were you able to achieve the target model performance?
-  - What steps did you take in your attempts to increase model performance?
+  - How many neurons, layers, and activation functions did you select for your neural network model, and why? The model consists of two hidden layers with 50 and 30 neurons, respectively. The first hidden layer uses the sigmoid activation function, and the second hidden layer uses the ReLU activation function. These choices were made based on experimentation and common practices in neural network architectures.
+  - Were you able to achieve the target model performance? Yes, I was able to achieve an Accuracy of 1.0 and Loss of 2.250281072591065e-09. The accuracy of 1 tells us that the model correctly identified all samples in the test data. The very low loss value shows us that the predictions are extremely close to the real values. 
+  - What steps did you take in your attempts to increase model performance? Since my model was already performing well, I just experimented by adding another hidden layer with an additional activition model, softmax. The 'optomized' model didn't perform as well as the first one. The loss was 0.010103730484843254 with an accuracy of 0.9986006021499634. 
 
 ## Summary:
-Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
+These results suggest that the model has learned the patterns in the data very well and is making accurate predictions of the success of organizations based on various input features. However, achieving perfect accuracy on the test data may also indicate potential overfitting, especially if the model has not been evaluated on unseen data or if the dataset is relatively small. Further optimization and fine-tuning may be necessary to achieve the desired performance metrics. 
 
+To ensure the robustness of the model, it's essential to validate its performance on unseen data, perhaps by employing techniques such as cross-validation or by splitting the data into separate training, validation, and test sets.
+
+Additionally, considering the nature of the classification problem and the complexity of the dataset, alternative models such as ensemble methods (e.g., random forest, gradient boosting) or deep learning architectures like convolutional neural networks (CNNs) or recurrent neural networks (RNNs) could also be explored to potentially improve model performance. These models may better capture the intricate relationships within the data and provide more accurate predictions.
+
+Overall, achieving high accuracy and low loss on the test data is a positive outcome, but it's important to interpret these results cautiously and consider potential sources of bias or overfitting.
 
 # Requirements
 ## Preprocess the Data (30 points)
